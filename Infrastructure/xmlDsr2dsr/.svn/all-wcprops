@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/xmlDsr2dsr
+END
+SAXDSRGenerator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/xmlDsr2dsr/SAXDSRGenerator.cc
+END
+mdfdsman.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/xmlDsr2dsr/mdfdsman.h
+END
+SAXDSRGenerator.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/xmlDsr2dsr/SAXDSRGenerator.h
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/xmlDsr2dsr/.project
+END
+.cproject
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/xmlDsr2dsr/.cproject
+END
+xmlDsr2dsr.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/xmlDsr2dsr/xmlDsr2dsr.cc
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/xmlDsr2dsr/makefile
+END
+mdfdsman.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/xmlDsr2dsr/mdfdsman.cc
+END
