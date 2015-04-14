@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIGURATION>
+
+  <SERVICE_PARAMETERS>
+      		<!-- Cadena libre que es utilizada para registrar la identidad
+		     del servicio en el indice del MDS. Utilice el caracter
+		     guion (-) para permitirle al servicio que tome su nombre
+		     del CN del Subject DN de las Credenciales Publicas con
+		     que corre el servicio. -->
+    <IDENTITY>-</IDENTITY>
+    <BASE_PATH>/home/trencadis/EOUIDGeneratorService</BASE_PATH>
+    <PATH_CATRUSTCERT>/etc/grid-security/certificates</PATH_CATRUSTCERT>
+    <TMP_DIR>/home/trencadis/EOUIDGeneratorService/tmp/</TMP_DIR>
+  </SERVICE_PARAMETERS>
+  
+  <GATEKEEPER_PARAMETERS>    
+      <HOST_NAME>devel.demien.es</HOST_NAME>
+      <HOST_PORT>5432</HOST_PORT>
+      <DB_NAME>DB_GateKeeper</DB_NAME>
+      <USER>postgres</USER>
+      <PASSWORD>postgres2012</PASSWORD>    
+  </GATEKEEPER_PARAMETERS>
+  
+  <LOGGER_PARAMETERS>
+       <LOG_PATH>/home/trencadis/EOUIDGeneratorService/log</LOG_PATH>
+  </LOGGER_PARAMETERS>       
+ 
+  <INDEX_SERVICE_PARAMETERS>    
+    <REGISTRATION_PATH>/home/trencadis/EOUIDGeneratorService/registration.xml</REGISTRATION_PATH>
+  </INDEX_SERVICE_PARAMETERS>
+
+</CONFIGURATION>
+

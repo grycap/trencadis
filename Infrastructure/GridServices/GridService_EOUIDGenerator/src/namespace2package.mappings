@@ -1,0 +1,3 @@
+http\://services.infrastructure.trencadis/EOUIDGenerator=trencadis.infrastructure.services.stubs.EOUIDGenerator
+http\://services.infrastructure.trencadis/EOUIDGenerator/bindings=trencadis.infrastructure.services.stubs.EOUIDGenerator.bindings
+http\://services.infrastructure.trencadis/EOUIDGenerator/service=trencadis.infrastructure.services.stubs.EOUIDGenerator.service

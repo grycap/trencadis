@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ServiceGroupRegistrationParameters
+	xmlns="http://mds.globus.org/servicegroup/client"
+	xmlns:sgc="http://mds.globus.org/servicegroup/client"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:wsa="http://www.w3.org/2005/08/addressing"
+	xmlns:agg="http://mds.globus.org/aggregator/types">                      
+
+	<!-- Renew this registration every 600 seconds (10 minutes) -->
+	<RefreshIntervalSecs>600</RefreshIntervalSecs>
+
+	<Content xsi:type="agg:AggregatorContent" xmlns:agg="http://mds.globus.org/aggregator/types">
+
+		<agg:AggregatorConfig xsi:type="agg:AggregatorConfig">
+			<agg:GetResourcePropertyPollType
+				xmlns:EOUIDGenerator="http://services.infrastructure.trencadis/EOUIDGenerator">                                                  
+
+				<!-- Specifies that the index should refresh information
+					every 60000 milliseconds (once per minute) -->
+				<agg:PollIntervalMillis>60000</agg:PollIntervalMillis>
+				<agg:ResourcePropertyName>EOUIDGenerator:EOUIDGeneratorServiceInfo</agg:ResourcePropertyName>
+
+			</agg:GetResourcePropertyPollType>
+		</agg:AggregatorConfig>
+		<agg:AggregatorData />
+	</Content>
+        
+</ServiceGroupRegistrationParameters>
