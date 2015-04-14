@@ -1,0 +1,4 @@
+trencadis.infrastructure.services.dicomstorage.backend
+trencadis.infrastructure.services.dicomstorage.backend.file_system
+trencadis.infrastructure.services.dicomstorage.backend.grid_ftp
+trencadis.infrastructure.services.dicomstorage.backend.test
