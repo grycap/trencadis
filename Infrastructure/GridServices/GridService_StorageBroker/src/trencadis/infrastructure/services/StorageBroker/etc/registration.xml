@@ -1,0 +1,30 @@
+<ServiceGroupRegistrationParameters
+   xmlns:sgc="http://mds.globus.org/servicegroup/client"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:wsa="http://www.w3.org/2005/08/addressing"
+   xmlns:agg="http://mds.globus.org/aggregator/types"
+   xmlns="http://mds.globus.org/servicegroup/client">
+
+   <!-- Specifies that the registration will be renewed every 20
+        seconds -->
+   <RefreshIntervalSecs>10</RefreshIntervalSecs>
+
+   <!-- <Content> specifies registration specific information -->
+   <Content xsi:type="agg:AggregatorContent"  xmlns:agg="http://mds.globus.org/aggregator/types">
+      <agg:AggregatorConfig xsi:type="agg:AggregatorConfig">
+            <agg:GetMultipleResourcePropertiesPollType xmlns:storagebroker="http://services.infrastructure.trencadis/StorageBroker">
+                 <!-- Specifies that the index should refresh information
+                 every 10000 milliseconds (once every 10 seconds) -->
+                 <agg:PollIntervalMillis>10000</agg:PollIntervalMillis>
+
+                 <!-- specifies the resource property that should be
+                 aggregated -->
+                 <agg:ResourcePropertyNames>storagebroker:Active</agg:ResourcePropertyNames>
+		         <agg:ResourcePropertyNames>storagebroker:DSRType</agg:ResourcePropertyNames>
+            </agg:GetMultipleResourcePropertiesPollType>
+      </agg:AggregatorConfig>
+      <agg:AggregatorData/>
+   </Content>
+
+</ServiceGroupRegistrationParameters>

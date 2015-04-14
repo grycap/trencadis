@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/StorageBroker/sources/trencadis/infrastructure/services/StorageBroker/impl/wrapper/config
+END
+Wrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/StorageBroker/sources/trencadis/infrastructure/services/StorageBroker/impl/wrapper/config/Wrapper.java
+END
+XmlWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/StorageBroker/sources/trencadis/infrastructure/services/StorageBroker/impl/wrapper/config/XmlWrapper.java
+END
+CONFIGURATION.java
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/StorageBroker/sources/trencadis/infrastructure/services/StorageBroker/impl/wrapper/config/CONFIGURATION.java
+END
+DATABASE_PARAMETERS.java
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/StorageBroker/sources/trencadis/infrastructure/services/StorageBroker/impl/wrapper/config/DATABASE_PARAMETERS.java
+END
+INDEX_SERVICE.java
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/StorageBroker/sources/trencadis/infrastructure/services/StorageBroker/impl/wrapper/config/INDEX_SERVICE.java
+END
+LFC_PARAMETERS.java
+K 25
+svn:wc:ra_dav:version-url
+V 189
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/StorageBroker/sources/trencadis/infrastructure/services/StorageBroker/impl/wrapper/config/LFC_PARAMETERS.java
+END
+AMGA_PARAMETERS.java
+K 25
+svn:wc:ra_dav:version-url
+V 190
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/StorageBroker/sources/trencadis/infrastructure/services/StorageBroker/impl/wrapper/config/AMGA_PARAMETERS.java
+END
+GATEKEEPER.java
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/StorageBroker/sources/trencadis/infrastructure/services/StorageBroker/impl/wrapper/config/GATEKEEPER.java
+END
+LOCAL_PARAMETERS.java
+K 25
+svn:wc:ra_dav:version-url
+V 191
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/StorageBroker/sources/trencadis/infrastructure/services/StorageBroker/impl/wrapper/config/LOCAL_PARAMETERS.java
+END

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="StorageBrokerFactory"
+    targetNamespace="http://services.infrastructure.trencadis/StorageBrokerFactory"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:tns="http://services.infrastructure.trencadis/StorageBrokerFactory"
+    xmlns:wsa="http://www.w3.org/2005/08/addressing"
+    xmlns:wsrp="http://docs.oasis-open.org/wsrf/rp-2"
+    xmlns:wsrpw="http://docs.oasis-open.org/wsrf/rpw-2"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdlpp="http://www.globus.org/namespaces/2004/10/WSDLPreprocessor"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<wsdl:import
+     namespace="http://docs.oasis-open.org/wsrf/rpw-2"
+     location="../wsrf/properties/rpw-2.wsdl"/>
+
+<!--============================================================
+
+                      T Y P E S
+
+  ============================================================-->
+<types>
+<xsd:schema targetNamespace="http://services.infrastructure.trencadis/StorageBrokerFactory"
+    xmlns:tns="http://services.infrastructure.trencadis/StorageBrokerFactory"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:import
+	    namespace="http://www.w3.org/2005/08/addressing"
+	    schemaLocation="../ws/addressing/ws-addr.xsd" />
+
+	<!-- REQUESTS AND RESPONSES -->
+    <xsd:element name="createResourceRequest"  type="xsd:string"/>
+
+	<xsd:element name="createResourceResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="wsa:EndpointReference"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+  <xsd:element name="updateResourcesRequest" type="xsd:string"/>
+  <xsd:element name="updateResourcesResponse" type="xsd:string"/>
+
+</xsd:schema>
+</types>
+
+<!--============================================================
+
+                       M E S S A G E S
+
+  ============================================================-->
+<message name="CreateResRequest">
+	<part name="request" element="tns:createResourceRequest"/>
+</message>
+<message name="CreateResResponse">
+	<part name="response" element="tns:createResourceResponse"/>
+</message>
+
+<message name="UpdateResRequest">
+	<part name="request" element="tns:updateResourcesRequest"/>
+</message>
+<message name="UpdateResResponse">
+	<part name="response" element="tns:updateResourcesResponse"/>
+</message>
+
+<!--============================================================
+
+                       P O R T T Y P E
+
+  ============================================================-->
+  <portType name="StorageBrokerFactoryPortType">
+
+	<operation name="createResource">
+		<input message="tns:CreateResRequest"/>
+		<output message="tns:CreateResResponse"/>
+	</operation>
+
+	<operation name="updateResources">
+		<input message="tns:UpdateResRequest"/>
+		<output message="tns:UpdateResResponse"/>
+	</operation>
+
+  </portType>
+
+</definitions>

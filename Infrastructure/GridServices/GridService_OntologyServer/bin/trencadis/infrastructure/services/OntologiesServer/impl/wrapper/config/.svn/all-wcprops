@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/OntologiesServer/sources/trencadis/infrastructure/services/OntologiesServer/impl/wrapper/config
+END
+GATEKEEPER_PARAMETERS.java
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/OntologiesServer/sources/trencadis/infrastructure/services/OntologiesServer/impl/wrapper/config/GATEKEEPER_PARAMETERS.java
+END
+Wrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/OntologiesServer/sources/trencadis/infrastructure/services/OntologiesServer/impl/wrapper/config/Wrapper.java
+END
+XmlWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 191
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/OntologiesServer/sources/trencadis/infrastructure/services/OntologiesServer/impl/wrapper/config/XmlWrapper.java
+END
+LOGGER_PARAMETERS.java
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/OntologiesServer/sources/trencadis/infrastructure/services/OntologiesServer/impl/wrapper/config/LOGGER_PARAMETERS.java
+END
+SERVICE_PARAMETERS.java
+K 25
+svn:wc:ra_dav:version-url
+V 199
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/OntologiesServer/sources/trencadis/infrastructure/services/OntologiesServer/impl/wrapper/config/SERVICE_PARAMETERS.java
+END
+LIST_OF_URL_IIS.java
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/OntologiesServer/sources/trencadis/infrastructure/services/OntologiesServer/impl/wrapper/config/LIST_OF_URL_IIS.java
+END
+URL_IIS.java
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/OntologiesServer/sources/trencadis/infrastructure/services/OntologiesServer/impl/wrapper/config/URL_IIS.java
+END
+CONFIGURATION.java
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/OntologiesServer/sources/trencadis/infrastructure/services/OntologiesServer/impl/wrapper/config/CONFIGURATION.java
+END
+BACKEND_PARAMETERS.java
+K 25
+svn:wc:ra_dav:version-url
+V 199
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/OntologiesServer/sources/trencadis/infrastructure/services/OntologiesServer/impl/wrapper/config/BACKEND_PARAMETERS.java
+END
+INDEX_SERVICE_PARAMETERS.java
+K 25
+svn:wc:ra_dav:version-url
+V 205
+/svn/trencadis/!svn/ver/55/trunk/SOURCES/TRENCADIS/INFRAESTRUCTURE/GridServices/OntologiesServer/sources/trencadis/infrastructure/services/OntologiesServer/impl/wrapper/config/INDEX_SERVICE_PARAMETERS.java
+END

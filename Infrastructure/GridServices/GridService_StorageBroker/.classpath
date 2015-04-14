@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="lib/axis.jar"/>
+	<classpathentry kind="lib" path="lib/cog-axis-1.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/cog-jglobus-1.2-060802.jar"/>
+	<classpathentry kind="lib" path="lib/wsrf_core.jar"/>
+	<classpathentry kind="lib" path="lib/wsrf_core_stubs.jar"/>
+	<classpathentry kind="lib" path="lib/trencadis_infrastructure_services_OntologiesServer_stubs.jar"/>
+	<classpathentry kind="lib" path="lib/trencadis_infrastructure_services_StorageBroker_stubs.jar"/>
+	<classpathentry kind="lib" path="lib/trencadis_infrastructure_services_StorageDICOM_stubs.jar"/>
+	<classpathentry kind="lib" path="lib/wsrf_mds_trigger_stubs.jar"/>
+	<classpathentry kind="lib" path="lib/xalan-2.6.jar"/>
+	<classpathentry kind="lib" path="lib/jaxrpc.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/GridService_GateKeeper"/>
+	<classpathentry kind="lib" path="lib/globus-addressing-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/xercesImpl-2.7.1.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/GridService_OntologyServer"/>
+	<classpathentry kind="lib" path="lib/globus_wsrf_servicegroup_stubs.jar"/>
+	<classpathentry kind="lib" path="lib/globus_wsrf_servicegroup.jar"/>
+	<classpathentry kind="lib" path="lib/commonj.jar"/>
+	<classpathentry kind="lib" path="lib/glite-amga-api-java-v1.30.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

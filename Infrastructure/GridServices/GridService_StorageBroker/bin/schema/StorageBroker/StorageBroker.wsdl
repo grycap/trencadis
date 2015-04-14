@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="StorageBroker"
+	     targetNamespace="http://services.infrastructure.trencadis/StorageBroker"
+	     xmlns="http://schemas.xmlsoap.org/wsdl/"
+	     xmlns:tns="http://services.infrastructure.trencadis/StorageBroker"
+	     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	     xmlns:wsrp="http://docs.oasis-open.org/wsrf/rp-2"
+	     xmlns:wsrpw="http://docs.oasis-open.org/wsrf/rpw-2"
+	     xmlns:wsrlw="http://docs.oasis-open.org/wsrf/rlw-2"
+	     xmlns:wsdlpp="http://www.globus.org/namespaces/2004/10/WSDLPreprocessor"
+	     xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<wsdl:import
+     namespace="http://docs.oasis-open.org/wsrf/rpw-2"
+     location="../wsrf/properties/rpw-2.wsdl"/>
+
+<wsdl:import
+     namespace="http://docs.oasis-open.org/wsrf/rlw-2"
+     location="../wsrf/lifetime/rlw-2.wsdl" />
+
+  <!--============================================================
+
+      T Y P E S
+
+      ============================================================-->
+
+  <types>
+    <xsd:schema targetNamespace="http://services.infrastructure.trencadis/StorageBroker"
+		xmlns:tns="http://services.infrastructure.trencadis/StorageBroker"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+      <!-- REQUESTS AND RESPONSES -->
+      <xsd:element name="multipleMetadataQueryRequest"  type="xsd:string"/>
+      <xsd:element name="multipleMetadataQueryResponse" type="xsd:string"/>
+
+      <xsd:element name="unregisterOntologyRequest"  type="xsd:string"/>
+      <xsd:element name="unregisterOntologyResponse" type="xsd:string"/>
+
+      <!-- RESOURCE PROPERTIES -->
+      <xsd:element name="active"            type="xsd:string"/>
+	  <xsd:element name="dsrtype"           type="xsd:string"/>
+	  <xsd:element name="hospital"          type="xsd:string"/>
+
+      <xsd:element name="StorageBrokerResourceProperties">
+	    <xsd:complexType>
+	      <xsd:sequence>
+	        <xsd:element ref="tns:active"  minOccurs="1" maxOccurs="1"/>
+	        <xsd:element ref="tns:dsrtype" minOccurs="1" maxOccurs="1"/>
+	      </xsd:sequence>
+	    </xsd:complexType>
+      </xsd:element>
+
+    </xsd:schema>
+  </types>
+
+  <!--============================================================
+
+      M E S S A G E S
+
+      ============================================================-->
+
+  <message name="xmlMultipleMetadataQueryIM">
+    <part name="parameters" element="tns:multipleMetadataQueryRequest"/>
+  </message>
+  <message name="xmlMultipleMetadataQueryOM">
+    <part name="parameters" element="tns:multipleMetadataQueryResponse"/>
+  </message>
+
+  <message name="xmlUnregisterOntologyIM">
+    <part name="parameters" element="tns:unregisterOntologyRequest"/>
+  </message>
+  <message name="xmlUnregisterOntologyOM">
+    <part name="parameters" element="tns:unregisterOntologyResponse"/>
+  </message>
+
+
+  <!--============================================================
+
+      P O R T T Y P E
+
+      ============================================================-->
+    
+  <portType name="StorageBrokerPortType"
+	    wsdlpp:extends="wsrpw:GetResourceProperty 
+                            wsrpw:GetMultipleResourceProperties 
+                            wsrpw:SetResourceProperties
+                            wsrpw:QueryResourceProperties
+                            wsrlw:ImmediateResourceTermination"
+	    wsrp:ResourceProperties="tns:StorageBrokerResourceProperties">
+
+    <operation name="xmlMultipleMetadataQuery">
+      <input message="tns:xmlMultipleMetadataQueryIM"/>
+      <output message="tns:xmlMultipleMetadataQueryOM"/>
+    </operation>
+
+    <operation name="xmlUnregisterOntology">
+      <input message="tns:xmlUnregisterOntologyIM"/>
+      <output message="tns:xmlUnregisterOntologyOM"/>
+    </operation>
+  </portType>
+
+</definitions>

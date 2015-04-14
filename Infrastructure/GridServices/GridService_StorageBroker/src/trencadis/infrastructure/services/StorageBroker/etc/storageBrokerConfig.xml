@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIGURATION>
+
+  <LOCAL_PARAMETERS>
+    <BASE_PATH>/usr/local/globus4/TRENCADIS/StorageDICOM</BASE_PATH>
+    <PATH_CATTRUSTCERT>/etc/grid-security/certificates</PATH_CATTRUSTCERT>
+    <TMP_DIR>/tmp/</TMP_DIR>
+    <POLL_INTERVAL>720000</POLL_INTERVAL>
+  </LOCAL_PARAMETERS>
+
+  <AMGA_PARAMETERS>
+    <HOST_NAME>localhost</HOST_NAME>
+    <HOST_PORT>8822</HOST_PORT>
+  </AMGA_PARAMETERS>
+  
+  <LFC_PARAMETERS>
+    <LCG_GFAL_INFOSYS>lcg-bdii.cern.ch:2170</LCG_GFAL_INFOSYS>
+    <LCG_GFAL_VO>biomed</LCG_GFAL_VO>
+    <LFC_HOME>/grid/biomed/dsr_amga_gt4</LFC_HOME>
+    <LFC_HOST>lfc-biomed.in2p3.fr</LFC_HOST>
+    <LCG_CATALOG_TYPE>lfc</LCG_CATALOG_TYPE>
+    <LCG_RFIO_TYPE>dpm</LCG_RFIO_TYPE>
+    <VO>biomed</VO>
+    <VO_DEFAULT_SE>nephthys.dsic.upv.es</VO_DEFAULT_SE>
+  </LFC_PARAMETERS>
+
+  <GATEKEEPER>
+    <DATABASE_PARAMETERS>
+      <HOST_NAME>trencadisv04.itaca.upv.es</HOST_NAME>
+      <HOST_PORT>5432</HOST_PORT>
+      <DB_NAME>DB_GatekeeperStorageBroker_josator</DB_NAME>
+      <USER>postgres</USER>
+      <PASSWORD>nopass</PASSWORD>
+    </DATABASE_PARAMETERS>
+  </GATEKEEPER>
+
+  <INDEX_SERVICE>
+    <URL_IIS_CENTRAL>http://trencadisv04.itaca.upv.es:8080/wsrf/services/DefaultIndexService</URL_IIS_CENTRAL>
+    <REGISTRATION_PATH>/usr/local/globus4/TRENCADIS/StorageBroker/registration.xml</REGISTRATION_PATH>
+  </INDEX_SERVICE>
+
+</CONFIGURATION>

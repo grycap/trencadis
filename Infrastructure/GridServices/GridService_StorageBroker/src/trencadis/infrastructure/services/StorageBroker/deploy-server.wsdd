@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment name="defaultServerConfig"
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Instance service -->
+    <service name="trencadis/infrastructure/services/StorageBroker" provider="Handler" use="literal" style="document">
+        <parameter name="className" value="trencadis.infrastructure.services.StorageBroker.impl.StorageBrokerService"/>
+        <wsdlFile>share/schema/StorageBroker/StorageBroker_service.wsdl</wsdlFile>
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="handlerClass" value="org.globus.axis.providers.RPCProvider"/>
+        <parameter name="scope" value="Application"/>
+        <parameter name="providers" value="GetRPProvider GetMRPProvider SetRPProvider QueryRPProvider DestroyProvider"/>
+    </service>
+
+    <!-- Factory service -->
+    <service name="trencadis/infrastructure/services/StorageBrokerFactory" provider="Handler" use="literal" style="document">
+        <parameter name="className" value="trencadis.infrastructure.services.StorageBroker.impl.StorageBrokerFactoryService"/>
+        <wsdlFile>share/schema/StorageBroker/StorageBrokerFactory_service.wsdl</wsdlFile>
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="handlerClass" value="org.globus.axis.providers.RPCProvider"/>
+        <parameter name="scope" value="Application"/>
+        <parameter name="instance" value="trencadis/infrastructure/services/StorageBroker"/>
+        <parameter name="loadOnStartup" value="true"/>
+    </service>
+
+</deployment>

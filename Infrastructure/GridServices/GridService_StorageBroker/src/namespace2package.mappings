@@ -1,0 +1,7 @@
+http\://services.infrastructure.trencadis/StorageBroker=trencadis.infrastructure.services.stubs.StorageBroker
+http\://services.infrastructure.trencadis/StorageBroker/bindings=trencadis.infrastructure.services.stubs.StorageBroker.bindings
+http\://services.infrastructure.trencadis/StorageBroker/service=trencadis.infrastructure.services.stubs.StorageBroker.service
+
+http\://services.infrastructure.trencadis/StorageBrokerFactory=trencadis.infrastructure.services.stubs.StorageBrokerFactory
+http\://services.infrastructure.trencadis/StorageBrokerFactory/bindings=trencadis.infrastructure.services.stubs.StorageBrokerFactory.bindings
+http\://services.infrastructure.trencadis/StorageBrokerFactory/service=trencadis.infrastructure.services.stubs.StorageBrokerFactory.service

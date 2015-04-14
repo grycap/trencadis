@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIGURATION>
+
+  <SERVICE_PARAMETERS>
+    <BASE_PATH>/home/trencadis/OntologiesServer</BASE_PATH>
+    <PATH_CATRUSTCERT>/etc/grid-security/certificates</PATH_CATRUSTCERT>
+    <TMP_DIR>/home/trencadis/tmp/</TMP_DIR>
+  </SERVICE_PARAMETERS>
+  
+  <GATEKEEPER_PARAMETERS>    
+      <HOST_NAME>devel.demien.es</HOST_NAME>
+      <HOST_PORT>5432</HOST_PORT>
+      <DB_NAME>DB_GateKeeper</DB_NAME>
+      <USER>postgres</USER>
+      <PASSWORD>postgres2012</PASSWORD>    
+  </GATEKEEPER_PARAMETERS>
+  
+  <LOGGER_PARAMETERS>
+       <LOG_PATH>/home/trencadis/OntologiesServer/log</LOG_PATH>
+  </LOGGER_PARAMETERS>  
+    
+  <BACKEND_PARAMETERS>
+    <HOST_NAME>devel.demien.es</HOST_NAME>
+    <HOST_PORT>5432</HOST_PORT>
+    <DB_NAME>DB_Ontologies</DB_NAME>
+    <USER>postgres</USER>
+    <PASSWORD>postgres2012</PASSWORD>
+  </BACKEND_PARAMETERS>
+
+ 
+  <INDEX_SERVICE_PARAMETERS>    
+    <REGISTRATION_PATH>/home/trencadis/OntologiesServer/registration.xml</REGISTRATION_PATH>
+    <LIST_OF_URL_IIS>
+        <URL_IIS>https://trencadisv04.i3m.upv.es:8443/wsrf/services/DefaultIndexService</URL_IIS>    
+        <URL_IIS>https://trencadisv05.i3m.upv.es:8443/wsrf/services/DefaultIndexService</URL_IIS>    
+        <URL_IIS>https://trencadisv02.i3m.upv.es:8443/wsrf/services/DefaultIndexService</URL_IIS>        
+    </LIST_OF_URL_IIS>
+  </INDEX_SERVICE_PARAMETERS>
+
+</CONFIGURATION>
