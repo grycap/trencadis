@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndiConfig xmlns="http://wsrf.globus.org/jndi/config">
+
+<!-- Instance service -->
+<service name="trencadis/infrastructure/services/DICOMStorage">
+	<resource name="home" type="trencadis.infrastructure.services.DICOMStorage.impl.DICOMStorageResourceHome">
+	<resourceParams>
+
+		<parameter>
+			<name>resourceClass</name>
+			<value>trencadis.infrastructure.services.DICOMStorage.impl.DICOMStorageResource</value>
+		</parameter>
+
+		<parameter>
+			<name>factory</name>
+			<value>org.globus.wsrf.jndi.BeanFactory</value>
+		</parameter>
+
+		<parameter>
+			<name>resourceKeyType</name>
+			<value>java.lang.String</value>
+		</parameter>
+
+		<parameter>
+			<name>resourceKeyName</name>
+			<value>{http://services.infrastructure.trencadis/DICOMStorage}DICOMStorageResourceKey</value>
+		</parameter>
+
+	</resourceParams>
+	</resource>
+</service>
+
+<!-- Factory service -->
+<service name="trencadis/infrastructure/services/DICOMStorageFactory">
+  <resourceLink name="home" target="java:comp/env/services/trencadis/infrastructure/services/DICOMStorage/home"/>
+</service>
+
+</jndiConfig>

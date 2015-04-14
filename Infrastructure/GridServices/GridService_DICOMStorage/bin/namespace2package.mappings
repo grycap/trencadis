@@ -1,0 +1,7 @@
+http\://services.infrastructure.trencadis/DICOMStorage=trencadis.infrastructure.services.stubs.DICOMStorage
+http\://services.infrastructure.trencadis/DICOMStorage/bindings=trencadis.infrastructure.services.stubs.DICOMStorage.bindings
+http\://services.infrastructure.trencadis/DICOMStorage/service=trencadis.infrastructure.services.stubs.DICOMStorage.service
+
+http\://services.infrastructure.trencadis/DICOMStorageFactory=trencadis.infrastructure.services.stubs.DICOMStorageFactory
+http\://services.infrastructure.trencadis/DICOMStorageFactory/bindings=trencadis.infrastructure.services.stubs.DICOMStorageFactory.bindings
+http\://services.infrastructure.trencadis/DICOMStorageFactory/service=trencadis.infrastructure.services.stubs.DICOMStorageFactory.service

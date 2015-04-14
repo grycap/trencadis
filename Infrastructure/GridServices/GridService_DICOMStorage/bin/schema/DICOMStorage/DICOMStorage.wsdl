@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="DICOMStorage"
+	     targetNamespace="http://services.infrastructure.trencadis/DICOMStorage"
+	     xmlns="http://schemas.xmlsoap.org/wsdl/"
+	     xmlns:tns="http://services.infrastructure.trencadis/DICOMStorage"
+	     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	     xmlns:wsrp="http://docs.oasis-open.org/wsrf/rp-2"
+	     xmlns:wsrpw="http://docs.oasis-open.org/wsrf/rpw-2"
+	     xmlns:wsrlw="http://docs.oasis-open.org/wsrf/rlw-2"
+	     xmlns:wsdlpp="http://www.globus.org/namespaces/2004/10/WSDLPreprocessor"
+	     xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<wsdl:import
+     namespace="http://docs.oasis-open.org/wsrf/rpw-2"
+     location="../wsrf/properties/rpw-2.wsdl"/>
+
+<wsdl:import 
+     namespace="http://docs.oasis-open.org/wsrf/rlw-2"
+     location="../wsrf/lifetime/rlw-2.wsdl" />
+
+  <!--============================================================
+  
+      T Y P E S
+
+      ============================================================-->
+
+  <types>
+    <xsd:schema targetNamespace="http://services.infrastructure.trencadis/DICOMStorage"
+		xmlns:tns="http://services.infrastructure.trencadis/DICOMStorage"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+      <!-- REQUESTS AND RESPONSES -->
+
+      <xsd:element name="addReportRequest"           type="xsd:string"/>
+      <xsd:element name="addReportResponse"          type="xsd:string"/>
+
+      <xsd:element name="removeReportRequest"        type="xsd:string"/>
+      <xsd:element name="removeReportResponse"       type="xsd:string"/>
+
+      <xsd:element name="downloadReportRequest"      type="xsd:string"/>
+      <xsd:element name="downloadReportResponse"     type="xsd:string"/>
+      
+	  <xsd:element name="downloadAllReportsRequest"  type="xsd:string"/>
+      <xsd:element name="downloadAllReportsResponse" type="xsd:string"/>
+      
+      <xsd:element name="downloadAllReportsByOntologyRequest"  		type="xsd:string"/>
+      <xsd:element name="downloadAllReportsByOntologyResponse" 		type="xsd:string"/>
+      
+      <xsd:element name="downloadAllReportsIDRequest"  type="xsd:string"/>
+      <xsd:element name="downloadAllReportsIDResponse" type="xsd:string"/>
+      
+      <xsd:element name="downloadAllReportsIDByOntologyRequest"  		type="xsd:string"/>
+      <xsd:element name="downloadAllReportsIDByOntologyResponse" 		type="xsd:string"/>
+
+      <xsd:element name="unregisterOntologyRequest"  type="xsd:string"/>
+      <xsd:element name="unregisterOntologyResponse" type="xsd:string"/>
+
+      <xsd:element name="metadataQueryRequest"       type="xsd:string"/>
+      <xsd:element name="metadataQueryResponse"      type="xsd:string"/>
+      
+      <xsd:element name="isActive"                   type="xsd:string"/>	
+      <xsd:element name="isActiveResponse"           type="xsd:string"/>
+      
+      <!-- RESOURCE PROPERTIES -->
+       <xsd:element name="OntologyInfo">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element name="IDOntology"  type="xsd:int"    minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="Description" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+       <xsd:element name="URIResourceInfo">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element name="URI" type="xsd:string"    minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="Key" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+      
+      
+      <xsd:element name="DICOMStorageServiceInfo">
+	<xsd:complexType>
+        	<xsd:sequence>
+                <xsd:element name="Domain"              type="xsd:string"         minOccurs="1" maxOccurs="1"/>                
+                <xsd:element name="IDCenter"            type="xsd:string"         minOccurs="1" maxOccurs="1"/>  
+                <xsd:element name="CenterName"          type="xsd:string"         minOccurs="1" maxOccurs="1"/>  
+                <xsd:element name="URIFactory"          type="xsd:string"         minOccurs="1" maxOccurs="1"/>                                
+                <xsd:element name="TypeIndexer"         type="xsd:string"         minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="URIResource"         ref="tns:URIResourceInfo" minOccurs="1" maxOccurs="1"/>  
+                <xsd:element name="Ontology"            ref="tns:OntologyInfo"    minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+        </xsd:complexType>
+	</xsd:element>>
+
+      <xsd:element name="DICOMStorageResourceProperties">
+	<xsd:complexType>
+	  <xsd:sequence>
+	    <xsd:element ref="tns:DICOMStorageServiceInfo" minOccurs="1" maxOccurs="1"/>
+	  </xsd:sequence>
+	</xsd:complexType>
+      </xsd:element>
+
+    </xsd:schema>
+  </types>
+
+  <!--============================================================
+
+      M E S S A G E S
+
+      ============================================================-->
+
+  <message name="xmlAddReportIM">
+    <part name="parameters" element="tns:addReportRequest"/>
+  </message>
+  <message name="xmlAddReportOM">
+    <part name="parameters" element="tns:addReportResponse"/>
+  </message>
+
+  <message name="xmlRemoveReportIM">
+    <part name="parameters" element="tns:removeReportRequest"/>
+  </message>
+  <message name="xmlRemoveReportOM">
+    <part name="parameters" element="tns:removeReportResponse"/>
+  </message>
+
+  <message name="xmlDownloadReportIM">
+    <part name="parameters" element="tns:downloadReportRequest"/>
+  </message>
+  <message name="xmlDownloadReportOM">
+    <part name="parameters" element="tns:downloadReportResponse"/>
+  </message>
+  
+  <message name="xmlDownloadAllReportsIM">
+    <part name="parameters" element="tns:downloadAllReportsRequest"/>
+  </message>
+  <message name="xmlDownloadAllReportsOM">
+    <part name="parameters" element="tns:downloadAllReportsResponse"/>
+  </message>
+  
+  <message name="xmlDownloadAllReportsByOntologyIM">
+    <part name="parameters" element="tns:downloadAllReportsByOntologyRequest"/>
+  </message>
+  <message name="xmlDownloadAllReportsByOntologyOM">
+    <part name="parameters" element="tns:downloadAllReportsByOntologyResponse"/>
+  </message>
+
+  <message name="xmlDownloadAllReportsIDIM">
+    <part name="parameters" element="tns:downloadAllReportsIDRequest"/>
+  </message>
+  <message name="xmlDownloadAllReportsIDOM">
+    <part name="parameters" element="tns:downloadAllReportsIDResponse"/>
+  </message>  
+  
+  <message name="xmlDownloadAllReportsIDByOntologyIM">
+    <part name="parameters" element="tns:downloadAllReportsIDByOntologyRequest"/>
+  </message>
+  <message name="xmlDownloadAllReportsIDByOntologyOM">
+    <part name="parameters" element="tns:downloadAllReportsIDByOntologyResponse"/>
+  </message> 
+
+  <message name="xmlUnregisterOntologyIM">
+    <part name="parameters" element="tns:unregisterOntologyRequest"/>
+  </message>
+  <message name="xmlUnregisterOntologyOM">
+    <part name="parameters" element="tns:unregisterOntologyResponse"/>
+  </message>
+
+  <message name="xmlMetadataQueryIM">
+  	<part name="parameters" element="tns:metadataQueryRequest"></part>
+  </message>
+  <wsdl:message name="xmlMetadataQueryOM">
+  	<part name="parameters" element="tns:metadataQueryResponse"></part>
+  </wsdl:message>
+  
+  <message name="IsActiveInputMessage">
+	<part name="parameters" element="tns:isActive"/>
+  </message>
+  <message name="IsActiveOutputMessage">
+	<part name="parameters" element="tns:isActiveResponse"/>
+  </message>
+
+  <!--============================================================
+
+      P O R T T Y P E
+
+      ============================================================-->
+
+  <portType name="DICOMStoragePortType"
+	    wsdlpp:extends="wsrpw:GetResourceProperty 
+                        wsrpw:GetMultipleResourceProperties 
+                        wsrpw:SetResourceProperties
+                        wsrpw:QueryResourceProperties
+                        wsrlw:ImmediateResourceTermination"
+	    wsrp:ResourceProperties="tns:DICOMStorageResourceProperties">
+
+    <operation name="xmlAddReport">
+      <input message="tns:xmlAddReportIM"/>
+      <output message="tns:xmlAddReportOM"/>
+    </operation>
+
+    <operation name="xmlRemoveReport">
+      <input message="tns:xmlRemoveReportIM"/>
+      <output message="tns:xmlRemoveReportOM"/>
+    </operation>
+
+    <operation name="xmlDownloadReport">
+      <input message="tns:xmlDownloadReportIM"/>
+      <output message="tns:xmlDownloadReportOM"/>
+    </operation>
+    
+    <operation name="xmlDownloadAllReports">
+      <input message="tns:xmlDownloadAllReportsIM"/>
+      <output message="tns:xmlDownloadAllReportsOM"/>
+    </operation>
+    
+    <operation name="xmlDownloadAllReportsByOntology">
+      <input message="tns:xmlDownloadAllReportsByOntologyIM"/>
+      <output message="tns:xmlDownloadAllReportsByOntologyOM"/>
+    </operation>
+    
+    <operation name="xmlDownloadAllReportsID">
+      <input message="tns:xmlDownloadAllReportsIDIM"/>
+      <output message="tns:xmlDownloadAllReportsIDOM"/>
+    </operation>
+    
+    <operation name="xmlDownloadAllReportsIDByOntology">
+      <input message="tns:xmlDownloadAllReportsIDByOntologyIM"/>
+      <output message="tns:xmlDownloadAllReportsIDByOntologyOM"/>
+    </operation>
+
+    <operation name="xmlUnregisterOntology">
+      <input message="tns:xmlUnregisterOntologyIM"/>
+      <output message="tns:xmlUnregisterOntologyOM"/>
+    </operation>
+
+    <operation name="xmlMetadataQuery">
+      <input message="tns:xmlMetadataQueryIM"/>
+      <output message="tns:xmlMetadataQueryOM"/>
+    </operation>
+    
+    <operation name="xmlIsActive">
+      <input message="tns:IsActiveInputMessage"/>
+      <output message="tns:IsActiveOutputMessage"/>
+    </operation>
+    
+
+  </portType>
+
+</definitions>

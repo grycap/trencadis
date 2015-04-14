@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIGURATION>
+
+  <SERVICE_PARAMETERS>
+    <IDCENTER>1</IDCENTER>      
+    <CENTERNAME>Hospital Universitario Doctor Peset</CENTERNAME>      
+    <BASE_PATH>/home/trencadis/DICOMStorage</BASE_PATH>
+    <PATH_CATRUSTCERT>/etc/grid-security/certificates</PATH_CATRUSTCERT>
+    <TMP_DIR>/home/trencadis/DICOMStorage/tmp/</TMP_DIR>
+  </SERVICE_PARAMETERS>
+
+  <GATEKEEPER_PARAMETERS>    
+      <HOST_NAME>trencadisv04.i3m.upv.es</HOST_NAME>
+      <HOST_PORT>5432</HOST_PORT>
+      <DB_NAME>DB_GateKeeper</DB_NAME>
+      <USER>postgres</USER>
+      <PASSWORD>postgres2012</PASSWORD>    
+  </GATEKEEPER_PARAMETERS>
+
+  <LOGGER_PARAMETERS>
+       <LOG_PATH>/home/trencadis/DICOMStorage/log</LOG_PATH>
+  </LOGGER_PARAMETERS>  
+
+  <INDEX_SERVICE_PARAMETERS>    
+    <REGISTRATION_PATH>/home/trencadis/DICOMStorage/registration.xml</REGISTRATION_PATH>
+    <LIST_OF_URL_IIS>
+        <URL_IIS>https://trencadisv02.i3m.upv.es:8443/wsrf/services/DefaultIndexService</URL_IIS>    
+        <URL_IIS>https://trencadisv04.i3m.upv.es:8443/wsrf/services/DefaultIndexService</URL_IIS>    
+        <URL_IIS>https://trencadisv05.i3m.upv.es:8443/wsrf/services/DefaultIndexService</URL_IIS>        
+    </LIST_OF_URL_IIS>
+  </INDEX_SERVICE_PARAMETERS>
+
+  <INDEXER_PARAMETERS>
+    <INDEXER_TYPE>AMGA</INDEXER_TYPE>  
+    <AMGA_PARAMETERS>
+        <HOME_DIR>Hospital_Peset</HOME_DIR>
+        <HOST_NAME>trencadisv04.i3m.upv.es</HOST_NAME>
+        <HOST_PORT>8822</HOST_PORT>
+        <TMP_DIR>/home/trencadis/DICOMStorage/tmp/</TMP_DIR>
+    </AMGA_PARAMETERS>
+  </INDEXER_PARAMETERS>
+
+  <BACKEND_PARAMETERS>
+    <BACKEND_TYPE>GRID_FTP</BACKEND_TYPE>  
+    <!--FILE_SYSTEM_PARAMETERS>
+        <HOME_DIR>/home/trencadis/DICOMStorage/BackEnd</HOME_DIR>
+    </FILE_SYSTEM_PARAMETERS-->
+    
+    <GRIDFTP_PARAMETERS>
+	<HOST_NAME>localhost</HOST_NAME>
+	<HOST_PORT>2811</HOST_PORT>
+	<HOME_DIR>/home/gridftp</HOME_DIR>
+    </GRIDFTP_PARAMETERS>
+  </BACKEND_PARAMETERS>
+
+<!--
+  <LFC_PARAMETERS>
+    <LCG_GFAL_INFOSYS>lcg-bdii.cern.ch:2170</LCG_GFAL_INFOSYS>
+    <LCG_GFAL_VO>biomed</LCG_GFAL_VO>
+    <LFC_HOME>/grid/biomed/dsr_amga_gt4</LFC_HOME>
+    <LFC_HOST>lfc-biomed.in2p3.fr</LFC_HOST>
+    <LCG_CATALOG_TYPE>lfc</LCG_CATALOG_TYPE>
+    <LCG_RFIO_TYPE>dpm</LCG_RFIO_TYPE>
+    <VO>biomed</VO>
+    <VO_DEFAULT_SE>nephthys.dsic.upv.es</VO_DEFAULT_SE>
+  </LFC_PARAMETERS>
+-->
+</CONFIGURATION>
