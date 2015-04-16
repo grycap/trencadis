@@ -127,10 +127,10 @@ public class TestOntologies {
             TRENCADIS_GET_ALL_ONTOLOGIES get_all_onto = new TRENCADIS_GET_ALL_ONTOLOGIES(session);
             Vector<TRENCADIS_XML_ONTOLOGY_FILE> trencadis_all_dicoms_sr = get_all_onto.execute();            
             for(TRENCADIS_XML_ONTOLOGY_FILE ontology_file : trencadis_all_dicoms_sr) {
-            	FileUtils.writeStringToFile(new File("/opt/trencadis/ontologies/ONTO_"
-            								+ ontology_file.getIDOntology() + ".xml"),
+            	FileUtils.writeStringToFile(new File("/opt/trencadis/ontologies/"
+            								+ ontology_file.getDescription() + ".xml"),
             								ontology_file.getContents());
-            	System.out.println(" -> Get ontology " + ontology_file.getIDOntology());
+            	System.out.println(" -> Get ontology " + ontology_file.getDescription());
             }
             System.out.println("TEST Succesfully");
             /**************************************************************************************/
