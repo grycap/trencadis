@@ -108,7 +108,7 @@ public class Helper {
 	}
         
     public String getDescription() {
-		return _IDReport;
+		return _Description;
 	}
 
 	public String get_DateTimeStart() {
