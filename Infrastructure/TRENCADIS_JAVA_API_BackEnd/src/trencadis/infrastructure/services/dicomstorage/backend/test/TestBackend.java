@@ -31,7 +31,7 @@ public class TestBackend {
 		
 		
 		try {
-			String credential = FileUtils.readFileToString(new File("/home/locamo/proxy.txt"));
+			String credential = FileUtils.readFileToString(new File("/home/locamo/gcredentials"));
 			
 			/**************** TEST GET_CONFIGURATION of BACKEND **********************
 			System.out.println(backend.iGetBackEndParameters());
@@ -56,7 +56,7 @@ public class TestBackend {
 			/*************************************************************************/
 			
 			/******************* TEST DOWNLOAD_FILE from BACKEND *********************/
-			String dsr = backend.xmlGetDICOMSRFile("78CB1D60-C7DB-11E4-8D35-A6C174863CCA", credential);
+			String dsr = backend.xmlGetDICOMSRFile("1D30DF20-C70A-11E4-8D35-E68FFB6C6EED", credential);
 			FileUtils.writeStringToFile(new File("/home/locamo/dsr.xml"), dsr);	
 			if (dsr != null)
 				System.out.println("TEST DOWNLOAD_FILE from BACKEND - SUCCESSFULLY");

@@ -578,8 +578,8 @@ public class DICOMStorageResource implements Resource, ResourceIdentifier,
 			} else {
 				xmlOutputDownloadReport += "<OUTPUT>\n";
 				xmlOutputDownloadReport += "\t<STATUS>-1</STATUS>\n";
-				xmlOutputDownloadReport += "\t<DESCRIPTION>\n\t"
-						+ API_BackEnd.strGetError() + "\n\tAPI_BackEnd Error: "
+				xmlOutputDownloadReport += "\t<DESCRIPTION>\n"
+						+ "\tAPI_BackEnd Error: "
 						+ this.API_BackEnd.strGetError() + "\n\t</DESCRIPTION>\n";
 				xmlOutputDownloadReport += "</OUTPUT>\n";
 

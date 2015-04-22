@@ -8,6 +8,7 @@ import static java.lang.System.getProperty;
 import static org.apache.commons.io.FilenameUtils.concat;
 
 import java.io.File;
+import java.util.Vector;
 
 import org.apache.commons.io.FileUtils;
 
@@ -106,8 +107,8 @@ public class TestDICOM {
 
             /******************* TEST - TRENCADIS_XMLDSR_DOWNLOAD - CONSTRUCTOR 1 ******/
             System.out.println("TEST DOWNLOAD DICOMSR from IDCenter 1");
-            gs3 = new TRENCADIS_XMLDSR_DOWNLOAD(session, "6", "1D30DF20-C70A-11E4-8D35-E68FFB6C6EED", 1);
-            xmlDsrDownload = gs3.execute();
+            gs3 = new TRENCADIS_XMLDSR_DOWNLOAD(session, 1, "6", "1D30DF20-C70A-11E4-8D35-E68FFB6C6EED");
+            xmlDsrDownload = (TRENCADIS_XML_DICOM_SR_FILE) gs3.execute();
             System.out.println("   ID Ontology: " + xmlDsrDownload.getIDOntology());
             System.out.println("   ID Report: " + xmlDsrDownload.getIDReport());
             FileUtils.writeStringToFile(new File(TEST_OUTPUT_DIR + File.separator
@@ -122,8 +123,8 @@ public class TestDICOM {
             
             /**************** TEST - TRENCADIS_XMLDSR_DOWNLOAD_ALL *************
             System.out.println("TEST DOWNLOAD_ALL_DICOMSR");
-            TRENCADIS_XMLDSR_DOWNLOAD_ALL gs6 = new TRENCADIS_XMLDSR_DOWNLOAD_ALL(session);
-            Vector<TRENCADIS_XML_DICOM_SR_FILE> v_xmldsr = gs6.execute();            
+            TRENCADIS_XMLDSR_DOWNLOAD gs6 = new TRENCADIS_XMLDSR_DOWNLOAD(session, 1);
+            Vector<TRENCADIS_XML_DICOM_SR_FILE> v_xmldsr = (Vector<TRENCADIS_XML_DICOM_SR_FILE>) gs6.execute();            
             for (TRENCADIS_XML_DICOM_SR_FILE xmldsr : v_xmldsr) {
             	FileUtils.writeStringToFile(new File(TEST_OUTPUT_DIR + File.separator
             			+ xmldsr.getIDReport() + ".xml")
@@ -136,9 +137,9 @@ public class TestDICOM {
             
             /************ TEST - TRENCADIS_XMLDSR_DOWNLOAD_ALL_BY_ONTOLOGY *****
             System.out.println("TEST DOWNLOAD_ALL_DICOMSR_BY_ONTOLOGY");
-            TRENCADIS_XMLDSR_DOWNLOAD_ALL_ONTOLOGY gs6 = new TRENCADIS_XMLDSR_DOWNLOAD_ALL_ONTOLOGY(session, 1, "7");
-            Vector<TRENCADIS_XML_DICOM_SR_FILE> v_xmldsr = gs6.execute();            
-            for (TRENCADIS_XML_DICOM_SR_FILE xmldsr : v_xmldsr) {
+            TRENCADIS_XMLDSR_DOWNLOAD gs7 = new TRENCADIS_XMLDSR_DOWNLOAD(session, 1, "7");
+            Vector<TRENCADIS_XML_DICOM_SR_FILE> v_xmldsr_onto = (Vector<TRENCADIS_XML_DICOM_SR_FILE>)gs7.execute();            
+            for (TRENCADIS_XML_DICOM_SR_FILE xmldsr : v_xmldsr_onto) {
             	FileUtils.writeStringToFile(new File(TEST_OUTPUT_DIR + File.separator
             			+ xmldsr.getIDReport() + ".xml")
             			, xmldsr.getContents());

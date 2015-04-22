@@ -53,11 +53,10 @@ public class Grid_FTP {
 	 */
 	private void setCredential(String credentialFile) {		
 		try {
-			File proxy = new File("/tmp/proxy");
+			File proxy = new File("/tmp/gcredentials");
 			FileUtils.writeStringToFile(proxy, credentialFile);
 			GlobusCredential gcred = new GlobusCredential("/tmp/gcredentials");
 			_credential = new GlobusGSSCredentialImpl(gcred, GSSCredential.DEFAULT_LIFETIME);			
-			proxy.delete();
 		} catch (IOException | GlobusCredentialException | GSSException e) {
 			e.printStackTrace();
 		}

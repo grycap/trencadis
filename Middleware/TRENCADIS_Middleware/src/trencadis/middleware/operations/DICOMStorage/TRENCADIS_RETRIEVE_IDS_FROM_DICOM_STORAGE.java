@@ -27,7 +27,7 @@ public class TRENCADIS_RETRIEVE_IDS_FROM_DICOM_STORAGE {
 	private Vector<DICOM_SR_ID> dicom_sr_ids = null;
 	
 	/**
-	 * This constructor obtain a list of DICOM-SR identifiers from a given hospital.
+	 * This constructor obtains a list of DICOM-SR identifiers from a given hospital.
 	 * 
 	 * @param DICOMStorage The DICOMStorage from the DICOM-SR identifiers will be download
 	 * @throws Exception
@@ -41,7 +41,7 @@ public class TRENCADIS_RETRIEVE_IDS_FROM_DICOM_STORAGE {
 	}
 	
 	/**
-	 * This constructor obtain a list of DICOM-SR identifiers from a given hospital
+	 * This constructor obtains a list of DICOM-SR identifiers from a given hospital
 	 * with a given ontology.
 	 * 
 	 * @param DICOMStorage The DICOMStorage from the DICOM-SR identifiers will be download
