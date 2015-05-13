@@ -14,15 +14,17 @@ import org.apache.commons.io.FileUtils;
  */
 public class TestLogin {
      public static void main(String[] args) {
-        try{
-            //File configFile = new File("/home/trencadis/middleware/trencadis.config");
+        
+    	 try{
+
         	File configFile = new File("/opt/trencadis/trencadis.config");
             TRENCADIS_SESSION session = new TRENCADIS_SESSION(configFile, "1234567890");            
             
             System.out.println(session.getX509VOMSProxyFile().getAbsolutePath().toString());
-            FileUtils.writeStringToFile(new File("/home/locamo/proxy.txt"), session.getX509VOMSCredential());
-        }catch(Exception ex){
-            ex.printStackTrace();
-        }
+            FileUtils.writeStringToFile(new File("/opt/trencadis/proxy.txt"), session.getX509VOMSCredential());
+        
+    	 }catch(Exception ex){
+    		 ex.printStackTrace();
+    	 }
      }
 }

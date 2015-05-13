@@ -56,11 +56,19 @@ public class TRENCADIS_RETRIEVE_IDS_FROM_DICOM_STORAGE {
 	}	
 	
 	public TRENCADIS_DICOM_STORAGE_BACKEND getBackend() {
-		return this.backend;
+		return backend;
 	}
 	
 	public Vector<DICOM_SR_ID> getDICOM_DSR_IDS() {
-		return this.dicom_sr_ids;
+		return dicom_sr_ids;
+	}
+	
+	public String getStringDICOM_DSR_IDS() {
+		String ids = "";
+		for (DICOM_SR_ID id : dicom_sr_ids) {
+			ids += id + ",";
+		}
+		return ids.substring(0, ids.length() - 1);
 	}
 
 	public String toXML() {
@@ -68,7 +76,7 @@ public class TRENCADIS_RETRIEVE_IDS_FROM_DICOM_STORAGE {
 	}
 	
 	public String getCenterName() {
-		return this.center_name;
+		return center_name;
 	}
 	
 	/**
