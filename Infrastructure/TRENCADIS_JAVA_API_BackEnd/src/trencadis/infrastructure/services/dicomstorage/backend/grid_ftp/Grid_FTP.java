@@ -24,7 +24,7 @@ public class Grid_FTP {
 
 	// GridFTP parameters
 
-	private GridFTPClient _gftp_client;
+	//private GridFTPClient _gftp_client;
 	private String _gftp_host;
 	private int _gftp_port;
 	private String _gftp_home_dir;
@@ -103,7 +103,7 @@ public class Grid_FTP {
 			if (_credential == null)
 				setCredential(credentialFile);
 			
-			_gftp_client = new GridFTPClient(_gftp_host, _gftp_port);
+			GridFTPClient _gftp_client = new GridFTPClient(_gftp_host, _gftp_port);
 			_gftp_client.authenticate(_credential);
 			_gftp_client.setType(GridFTPSession.TYPE_ASCII);
 			_gftp_client.setPassive();
@@ -139,7 +139,7 @@ public class Grid_FTP {
 			if (_credential == null)
 				setCredential(credentialFile);
 			
-			_gftp_client = new GridFTPClient(_gftp_host, _gftp_port);
+			GridFTPClient _gftp_client = new GridFTPClient(_gftp_host, _gftp_port);
 			_gftp_client.authenticate(_credential);
 			_gftp_client.setType(GridFTPSession.TYPE_ASCII);
 			_gftp_client.setPassive();
@@ -175,7 +175,7 @@ public class Grid_FTP {
 			if (_credential == null)
 				setCredential(credentialFile);
 			
-			_gftp_client = new GridFTPClient(_gftp_host, _gftp_port);
+			GridFTPClient _gftp_client = new GridFTPClient(_gftp_host, _gftp_port);
 			_gftp_client.authenticate(_credential);
 			_gftp_client.setType(GridFTPSession.TYPE_ASCII);
 			_gftp_client.setPassive();
@@ -216,7 +216,7 @@ public class Grid_FTP {
 			if (_credential == null)
 				setCredential(credentialFile);
 			
-			_gftp_client = new GridFTPClient(_gftp_host, _gftp_port);
+			GridFTPClient _gftp_client = new GridFTPClient(_gftp_host, _gftp_port);
 			_gftp_client.authenticate(_credential);
 			_gftp_client.setType(GridFTPSession.TYPE_ASCII);
 			_gftp_client.setPassive();
@@ -246,12 +246,12 @@ public class Grid_FTP {
 	 * @return DICOM-SR reports
 	 */
 	public String xmlGetAllDICOMSRFiles(String strIDFiles, String credentialFile){
-    	try{
+    	try {
     		
 			if (_credential == null)
 				setCredential(credentialFile);
     		
-    		_gftp_client = new GridFTPClient(_gftp_host, _gftp_port);
+			GridFTPClient _gftp_client = new GridFTPClient(_gftp_host, _gftp_port);
 			_gftp_client.authenticate(_credential);
 			
 			String retval = "";
@@ -267,10 +267,8 @@ public class Grid_FTP {
         								 _gftp_client.getSize(_gftp_home_dir + "/" + strIDFile),
         								 sink,
         								 null);
-        		//retval += "\t<DICOM_SR>";
         		String aux = FileUtils.readFileToString(dsr);
         		retval += aux.replace("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", "");
-        		//retval += "</DICOM_SR>\n";
         		dsr.delete();
         	}
         	retval += "\t</DICOM_REPORTS>\n";
@@ -278,7 +276,7 @@ public class Grid_FTP {
         	
         	return retval;
 
-        }catch(IOException | ServerException | ClientException ex){
+        } catch(IOException | ServerException | ClientException ex) {
         	ex.printStackTrace();
             throw new RuntimeException(ex.getMessage());
         }
