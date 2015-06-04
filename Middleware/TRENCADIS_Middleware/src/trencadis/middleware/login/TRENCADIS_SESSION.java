@@ -26,7 +26,8 @@ import trencadis.middleware.wrapper.config.XmlWrapper;
 public class TRENCADIS_SESSION {
 
 	private SimpleUUIDGen _entropyProvider = new SimpleUUIDGen();
-
+	VOMSProxyInit vpi = null;
+	
 	private String _base_path;
 	private String _usercert;
 	private String _userkey;
@@ -89,7 +90,6 @@ public class TRENCADIS_SESSION {
 		_proxyPath = _tmpdir + "/x509up_uTRENCADIS_MIDDLEWARE_"
 				+ System.currentTimeMillis();
 
-		// TODO code application logic here
 		System.setProperty("X509_USER_CERT", _usercert);
 		System.setProperty("X509_USER_KEY", _userkey);
 		System.setProperty("VOMSES_LOCATION", _vomses);
@@ -104,9 +104,7 @@ public class TRENCADIS_SESSION {
 		vsi.setHostDn(_host_dn_voms);
 		vsi.setAlias(_vo);
 
-		VOMSProxyInit vpi = null;
 		vpi = VOMSProxyInit.instance(_password);
-
 		vpi.setProxyOutputFile(_proxyPath);
 		vpi.setProxyType(trencadis.infrastructure.voms.contact.VOMSProxyBuilder.GT4_PROXY);
 		vpi.setDelegationType(trencadis.infrastructure.voms.contact.VOMSProxyConstants.DELEGATION_FULL);
@@ -185,6 +183,16 @@ public class TRENCADIS_SESSION {
 			ex.printStackTrace();
 			return null;
 		}
+	}
+	
+	/**
+	 * Getter method for the lifetime of certificate
+	 * 
+	 * @return Certificate lifetime
+	 */
+	
+	public int getProxyLifetime() {
+		return vpi.getProxyLifetime();
 	}
 
 	/**************************************************************************/

@@ -8,12 +8,12 @@ import static java.lang.System.getProperty;
 import static org.apache.commons.io.FilenameUtils.concat;
 
 import java.io.File;
-import java.util.Vector;
 
-import org.apache.commons.io.FileUtils;
-
+import trencadis.infrastructure.services.DICOMStorage.impl.wrapper.xmlOutputDownloadAllReportsID.DICOM_SR_ID;
 import trencadis.middleware.files.TRENCADIS_XML_DICOM_SR_FILE;
 import trencadis.middleware.login.TRENCADIS_SESSION;
+import trencadis.middleware.operations.DICOMStorage.TRENCADIS_RETRIEVE_IDS_FROM_DICOM_STORAGE;
+import trencadis.middleware.operations.DICOMStorage.TRENCADIS_STORAGE_BROKER_RETRIEVE_IDS;
 import trencadis.middleware.operations.DICOMStorage.TRENCADIS_XMLDSR_DOWNLOAD;
 import trencadis.middleware.operations.DICOMStorage.TRENCADIS_XMLDSR_REMOVE;
 import trencadis.middleware.operations.DICOMStorage.TRENCADIS_XMLDSR_UPLOAD;
@@ -58,7 +58,7 @@ public class TestDICOM {
             
             /******************* TEST - TRENCADIS_XMLDSR_UPLOAD - CONSTRUCTOR 1 *******
             System.out.println("TEST - TRENCADIS_XMLDSR_UPLOAD");
-            xmlDSR    = new File("/opt/trencadis/files/reports/ECO_13_750.xml");
+            xmlDSR    = new File("/opt/trencadis/files/reports/ECO_1_500.xml");
             xmlDsr1   = new TRENCADIS_XML_DICOM_SR_FILE(session, xmlDSR);            
             gs = new TRENCADIS_XMLDSR_UPLOAD(session,xmlDsr1);
             gs.execute();
@@ -66,14 +66,14 @@ public class TestDICOM {
             System.out.println("TEST Succesfully - UPLOAD DICOMSR Ecography to any Center that support the Ontology");
             /*******************************************************************/
             
-            /******************* TEST - TRENCADIS_XMLDSR_UPLOAD - CONSTRUCTOR 1 *******            
+            /******************* TEST - TRENCADIS_XMLDSR_UPLOAD - CONSTRUCTOR 1 *******
             System.out.println("TEST - TRENCADIS_XMLDSR_UPLOAD");
             IOFileFilter fileFilter = FileFilterUtils.trueFileFilter();
-        	File homeDir = new File("/opt/trencadis/files/reports_test/MAMO/");
+        	File homeDir = new File("/opt/trencadis/files/to_upload/reso/");
         	Collection<File> files = FileUtils.listFiles(homeDir, fileFilter, (IOFileFilter) null);
             for (File xmlDsr: files) {            
 	            xmlDsr2   = new TRENCADIS_XML_DICOM_SR_FILE(session, xmlDsr);            
-	      		gs = new TRENCADIS_XMLDSR_UPLOAD(session, xmlDsr2, "1");
+	      		gs = new TRENCADIS_XMLDSR_UPLOAD(session, xmlDsr2, 1);
 	      		gs.execute();
 	      		System.out.println("  > " + xmlDsr2.getIDReport() + " - " + xmlDsr2.getIDTRENCADISReport());
             }
@@ -105,7 +105,7 @@ public class TestDICOM {
             xmlDsrDownload = gs3.execute();
             System.out.println("TEST Succesfully - DOWNLOAD DICOMSR Exploration Breast from IDCenter 1 and IDOntology " + xmlDsrDownload.getIDOntology() + " - CONSTRUCTOR 1");            
 
-            /******************* TEST - TRENCADIS_XMLDSR_DOWNLOAD - CONSTRUCTOR 1 ******/
+            /******************* TEST - TRENCADIS_XMLDSR_DOWNLOAD - CONSTRUCTOR 1 ******
             System.out.println("TEST DOWNLOAD DICOMSR from IDCenter 1");
             gs3 = new TRENCADIS_XMLDSR_DOWNLOAD(session, 1, "6", "1D30DF20-C70A-11E4-8D35-E68FFB6C6EED");
             xmlDsrDownload = (TRENCADIS_XML_DICOM_SR_FILE) gs3.execute();
@@ -173,8 +173,8 @@ public class TestDICOM {
             System.out.println("TEST Succesfully");            
             /*******************************************************************/
             
-            /**** TEST - TRENCADIS_XMLDSR_DOWNLOAD_INDEXER_IDs (ontology and center) *****
-            System.out.println("TEST DOWNLOAD_ALL_DICOMSR_IDs);
+            /**** TEST - TRENCADIS_XMLDSR_DOWNLOAD_INDEXER_IDs (ontology and center) *****/
+            System.out.println("TEST DOWNLOAD_ALL_DICOMSR_IDs");
             TRENCADIS_STORAGE_BROKER_RETRIEVE_IDS gs8 = new TRENCADIS_STORAGE_BROKER_RETRIEVE_IDS(session, 1, "6");
             for (TRENCADIS_RETRIEVE_IDS_FROM_DICOM_STORAGE dicomStorageIDS : gs8.getDICOMStorageIDS()) {
             	System.out.println(dicomStorageIDS.getBackend().toString());
