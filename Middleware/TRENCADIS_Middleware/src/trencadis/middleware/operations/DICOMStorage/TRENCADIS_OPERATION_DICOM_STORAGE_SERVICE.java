@@ -70,22 +70,24 @@ public abstract class TRENCADIS_OPERATION_DICOM_STORAGE_SERVICE extends
 		if (response == null) {
 			throw new Exception(query_iis.strGetError());
 		}
-
+		
 		MessageElement[] responseContents = response.get_any();
-
+		
 		bConnect = false;
-		for (int i = 0; (i < responseContents.length) && (!bConnect); i = i + 2) {
+		for (int i = 0; (i < responseContents.length) && (!bConnect); i = i + 6) {
 			try {
 				getserverPortType(new URI(responseContents[i].getValue()),
 						responseContents[i + 1].getValue());
-				bConnect = true;
+				if ( i == responseContents.length - 6 ) bConnect = true;
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
 		}
+		
 		if (!bConnect)
 			throw new Exception(
 					"All URIs of DICOMStrorage Resources published in the central IIS are disconected");
+					
 	}
 	
 	/**
@@ -119,25 +121,26 @@ public abstract class TRENCADIS_OPERATION_DICOM_STORAGE_SERVICE extends
 		if (response == null) {
 			throw new Exception(query_iis.strGetError());
 		}
-
+		
 		MessageElement[] responseContents = response.get_any();
 
 		bConnect = false;
 		for (int i = 0; (i < responseContents.length) && (!bConnect); i = i + 2) {
 			try {
-				
 				getserverPortType(new URI(responseContents[i].getValue()),
 						responseContents[i + 1].getValue());
-				bConnect = true;
+				if ( i == responseContents.length - 2 ) bConnect = true;
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
 		}
+	
 		if (!bConnect)
 			throw new Exception(
 					"All URIs of DICOMStrorage Resources for IDOntology = "
 							+ IDOntology
 							+ " published in the central IIS are disconected");
+							
 	}
 
 	/**
@@ -179,17 +182,18 @@ public abstract class TRENCADIS_OPERATION_DICOM_STORAGE_SERVICE extends
 			try {
 				getserverPortType(new URI(responseContents[i].getValue()),
 						responseContents[i + 1].getValue());
-				bConnect = true;
+				if ( i == responseContents.length - 2 ) bConnect = true;
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
 		}
+		
 		if (!bConnect)
 			throw new Exception(
 					"All URIs of DICOMStrorage Resources for IDOntology = "
 							+ IDOntology
 							+ " published in the central IIS are disconected");
-
+		
 	}
 	
 	/**
@@ -228,7 +232,7 @@ public abstract class TRENCADIS_OPERATION_DICOM_STORAGE_SERVICE extends
 			try {
 				getserverPortType(new URI(responseContents[i].getValue()),
 						responseContents[i + 1].getValue());
-				bConnect = true;
+				if ( i == responseContents.length - 2 ) bConnect = true;
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}

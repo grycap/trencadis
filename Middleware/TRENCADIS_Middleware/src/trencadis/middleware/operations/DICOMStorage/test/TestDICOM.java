@@ -4,10 +4,9 @@
  */
 package trencadis.middleware.operations.DICOMStorage.test;
 
-import static java.lang.System.getProperty;
-import static org.apache.commons.io.FilenameUtils.concat;
-
 import java.io.File;
+
+import org.apache.commons.io.FileUtils;
 
 import trencadis.infrastructure.services.DICOMStorage.impl.wrapper.xmlOutputDownloadAllReportsID.DICOM_SR_ID;
 import trencadis.middleware.files.TRENCADIS_XML_DICOM_SR_FILE;
@@ -24,18 +23,17 @@ import trencadis.middleware.operations.DICOMStorage.TRENCADIS_XMLDSR_UPLOAD;
  */
 public class TestDICOM {
 	
-	private static final File TEST_OUTPUT_DIR = new File(concat(getProperty("java.io.tmpdir"),
-			"trencadis" + File.separator + "reports"));
 	
     public static void main(String[] args) {
     	
         try{
-        	
-        	TEST_OUTPUT_DIR.mkdirs();
+
             File xmlDSR = null;
             
             TRENCADIS_XML_DICOM_SR_FILE xmlDsr1 = null;
             TRENCADIS_XML_DICOM_SR_FILE xmlDsr2 = null;
+            TRENCADIS_XML_DICOM_SR_FILE xmlDsrTest1 = null;
+            TRENCADIS_XML_DICOM_SR_FILE xmlDsrTest2 = null;
             TRENCADIS_XML_DICOM_SR_FILE xmlDsr3 = null;
             TRENCADIS_XML_DICOM_SR_FILE xmlDsrDownload = null;
             TRENCADIS_XMLDSR_UPLOAD gs = null;
@@ -69,14 +67,35 @@ public class TestDICOM {
             /******************* TEST - TRENCADIS_XMLDSR_UPLOAD - CONSTRUCTOR 1 *******
             System.out.println("TEST - TRENCADIS_XMLDSR_UPLOAD");
             IOFileFilter fileFilter = FileFilterUtils.trueFileFilter();
-        	File homeDir = new File("/opt/trencadis/files/to_upload/reso/");
+        	File homeDir = new File("/opt/trencadis/files/reports_duplicate");
         	Collection<File> files = FileUtils.listFiles(homeDir, fileFilter, (IOFileFilter) null);
-            for (File xmlDsr: files) {            
-	            xmlDsr2   = new TRENCADIS_XML_DICOM_SR_FILE(session, xmlDsr);            
-	      		gs = new TRENCADIS_XMLDSR_UPLOAD(session, xmlDsr2, 1);
-	      		gs.execute();
-	      		System.out.println("  > " + xmlDsr2.getIDReport() + " - " + xmlDsr2.getIDTRENCADISReport());
-            }
+        	for (int i = 0; i < 400; i++) {
+        		int j = 0;
+	            for (File xmlDsr: files) {            
+//	            	xmlDsrTest1   = new TRENCADIS_XML_DICOM_SR_FILE(session, xmlDsr);            
+//		      		gs = new TRENCADIS_XMLDSR_UPLOAD(session, xmlDsrTest1, 1);
+//		      		gs.execute();
+//		      		Thread.sleep(1000l);
+		      		xmlDsrTest2   = new TRENCADIS_XML_DICOM_SR_FILE(session, xmlDsr);
+		      		gs = new TRENCADIS_XMLDSR_UPLOAD(session, xmlDsrTest2, 2);
+		      		gs.execute();
+		      		System.out.println("  > " + xmlDsrTest2.getIDReport()
+		      						   //+ "\t- trencadisv06: " + xmlDsrTest1.getIDTRENCADISReport()
+		      						   + "\t- vmblade17: " + xmlDsrTest2.getIDTRENCADISReport());
+		      		if (j == 50 || j == 100) {
+		      			File tmpDir = new File("/tmp");
+		      			String[] extension = new String[] { "xml" };
+		      			for (final File file : FileUtils.listFiles(tmpDir, extension, true)) {
+		      				file.delete();
+		      			}
+		      			Thread.sleep(360000l);
+		      		}
+		      		Thread.sleep(1000l);
+		      		j++;
+	            }
+	            //System.out.println("Iteration " + i + " completed.");
+	            Thread.sleep(300000l);
+        	}
             System.out.println("TEST Succesfully");
             /*******************************************************************/
                         
@@ -175,11 +194,15 @@ public class TestDICOM {
             
             /**** TEST - TRENCADIS_XMLDSR_DOWNLOAD_INDEXER_IDs (ontology and center) *****/
             System.out.println("TEST DOWNLOAD_ALL_DICOMSR_IDs");
-            TRENCADIS_STORAGE_BROKER_RETRIEVE_IDS gs8 = new TRENCADIS_STORAGE_BROKER_RETRIEVE_IDS(session, 1, "6");
+            TRENCADIS_STORAGE_BROKER_RETRIEVE_IDS gs8 = new TRENCADIS_STORAGE_BROKER_RETRIEVE_IDS(session);
+            int i = 0;
             for (TRENCADIS_RETRIEVE_IDS_FROM_DICOM_STORAGE dicomStorageIDS : gs8.getDICOMStorageIDS()) {
-            	System.out.println(dicomStorageIDS.getBackend().toString());
+            	String data = "";
+            	data += dicomStorageIDS.getCenterName() + "\n";
             	for (DICOM_SR_ID id : dicomStorageIDS.getDICOM_DSR_IDS())
-            		System.out.println("\t- " + id.getValue());
+            		data += "\t- " + id.getValue() + "\n";
+            	FileUtils.writeStringToFile(new File("/home/locamo/", (dicomStorageIDS.getCenterName().replaceAll(" ", "")) + i), data );
+            	i++;
             }
             System.out.println("TEST Succesfully");            
             /*******************************************************************/
