@@ -17,3 +17,4 @@ demand of the platform.
 
 ![Screenshot - TRENCADIS infrastructure deployment](./Middleware/TRENCADIS_Middleware/src/trencadis/middleware/images/trencadis_deployment.jpg?cropResize=300,300)
 
+<img src="https://github.com/grycap/trencadis/blob/master/Middleware/TRENCADIS_Middleware/src/trencadis/middleware/images/trencadis_deployment.jpg"  width="337px" height="307px" />
