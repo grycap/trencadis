@@ -15,6 +15,6 @@ and handle performance and reliability requirements by elastically
 provisioning computational resources from the Cloud to cope with increased
 demand of the platform.
 
-![Screenshot - TRENCADIS infrastructure deployment](./Middleware/TRENCADIS_Middleware/src/trencadis/middleware/images/trencadis_deployment.jpg?cropResize=300,300)
-
-<img src="https://github.com/grycap/trencadis/blob/master/Middleware/TRENCADIS_Middleware/src/trencadis/middleware/images/trencadis_deployment.jpg"  width="337px" height="307px" />
+<center>
+<img src="https://github.com/grycap/trencadis/blob/master/Middleware/TRENCADIS_Middleware/src/trencadis/middleware/images/trencadis_deployment.jpg"  width="505px" height="460px" />
+</center>
